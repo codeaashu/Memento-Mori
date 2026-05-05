@@ -113,6 +113,27 @@ function LandingPage() {
         </div>
       </div>
 
+      {/* X Profile Link */}
+      <a
+        href="https://x.com/warrioraashuu"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed top-2 right-2 sm:right-6 sm:top-4 z-50 hover:opacity-80 transition-opacity"
+      >
+        <div className="border border-[#1a2e1a] bg-[#0d1210]/90 backdrop-blur-sm p-1 relative flex justify-center items-center">
+          {/* Corner accents */}
+          <div className="absolute top-0 left-0 w-1 h-1 border-l border-t border-[#dc2626]" />
+          <div className="absolute top-0 right-0 w-1 h-1 border-r border-t border-[#dc2626]" />
+          <div className="absolute bottom-0 left-0 w-1 h-1 border-l border-b border-[#dc2626]" />
+          <div className="absolute bottom-0 right-0 w-1 h-1 border-r border-b border-[#dc2626]" />
+
+          <div className="flex items-center gap-1 text-sm font-bold tracking-wider">
+            <span className="text-[#e5e5e5]">𝕏</span>
+            <span className="text-[#dc2626]">aashuu</span>
+          </div>
+        </div>
+      </a>
+
       {/* Hero Section */}
       <section className="relative pt-20 pb-18 md:pt-7 md:pb-20 px-6 overflow-hidden ">
         {/* Background Grid Effect */}
