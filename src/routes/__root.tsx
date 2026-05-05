@@ -3,6 +3,7 @@ import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { Databuddy } from "@databuddy/sdk/react";
+import { Analytics } from "@vercel/analytics/react";
 import appCss from "../styles.css?url";
 import { cn } from "@/lib/utils";
 
@@ -173,6 +174,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         {children}
 
         <Databuddy clientId="rhQX-ll5oxETW6wwdxhqa" enableBatching={true} />
+        <Analytics />
         {isDevelopment ? (
           <TanStackDevtools
             config={{
