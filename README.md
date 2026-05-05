@@ -13,11 +13,6 @@ Purpose
 <img width="3584" height="4365" alt="Memento-Mori-Visualize-Your-Life-in-Weeks" src="https://github.com/user-attachments/assets/574ce844-e31a-42d5-b4a8-026a93b148a0" />
 
 
-<img width="1920" height="1080" alt="screenshot-2025-12-23_13-54-10" src="https://github.com/user-attachments/assets/fbfadc07-7de3-4997-a3f5-b828f701e936" />
-
-<img width="1920" height="1080" alt="screenshot-2025-12-23_13-53-54" src="https://github.com/user-attachments/assets/dd94cb17-de4f-4653-9900-a27612bf8ed1" />
-
-
 Why this exists
 
 - People often treat time as unlimited. Seeing time represented visually is a gentle but powerful reality check.
