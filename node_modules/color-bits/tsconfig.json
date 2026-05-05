@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2017"],
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "preserveConstEnums": true,
+    "outDir": "./build",
+    "sourceMap": true,
+    "declaration": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/*.test.ts"]
+}

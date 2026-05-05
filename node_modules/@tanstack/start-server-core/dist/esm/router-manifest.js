@@ -1,0 +1,62 @@
+import { buildDevStylesUrl, rootRouteId } from "@tanstack/router-core";
+//#region src/router-manifest.ts
+var DEV_SSR_STYLES_BASEPATH = process.env.TSS_DEV_SSR_STYLES_BASEPATH || "/";
+/**
+* @description Returns the router manifest data that should be sent to the client.
+* This includes only the assets and preloads for the current route and any
+* special assets that are needed for the client. It does not include relationships
+* between routes or any other data that is not needed for the client.
+*
+* The client entry URL is returned separately so that it can be transformed
+* (e.g. for CDN rewriting) before being embedded into the `<script>` tag.
+*
+* @param matchedRoutes - In dev mode, the matched routes are used to build
+* the dev styles URL for route-scoped CSS collection.
+*/
+async function getStartManifest(matchedRoutes) {
+	const { tsrStartManifest } = await import("tanstack-start-manifest:v");
+	const startManifest = tsrStartManifest();
+	const rootRoute = startManifest.routes[rootRouteId] = startManifest.routes[rootRouteId] || {};
+	rootRoute.assets = rootRoute.assets || [];
+	if (process.env.TSS_DEV_SERVER === "true" && process.env.TSS_DEV_SSR_STYLES_ENABLED !== "false" && matchedRoutes) {
+		const matchedRouteIds = matchedRoutes.map((route) => route.id);
+		rootRoute.assets.push({
+			tag: "link",
+			attrs: {
+				rel: "stylesheet",
+				href: buildDevStylesUrl(DEV_SSR_STYLES_BASEPATH, matchedRouteIds),
+				"data-tanstack-router-dev-styles": "true"
+			}
+		});
+	}
+	let injectedHeadScripts;
+	if (process.env.TSS_DEV_SERVER === "true") {
+		const mod = await import("tanstack-start-injected-head-scripts:v");
+		if (mod.injectedHeadScripts) injectedHeadScripts = mod.injectedHeadScripts;
+	}
+	return {
+		manifest: {
+			inlineCss: startManifest.inlineCss,
+			routes: Object.fromEntries(Object.entries(startManifest.routes).flatMap(([k, v]) => {
+				const result = {};
+				let hasData = false;
+				if (v.preloads && v.preloads.length > 0) {
+					result["preloads"] = v.preloads;
+					hasData = true;
+				}
+				if (v.assets && v.assets.length > 0) {
+					result["assets"] = v.assets;
+					hasData = true;
+				}
+				if (!hasData) return [];
+				return [[k, result]];
+			}))
+		},
+		clientEntry: startManifest.clientEntry,
+		injectedHeadScripts
+	};
+}
+//#endregion
+export { getStartManifest };
+
+//# sourceMappingURL=router-manifest.js.map

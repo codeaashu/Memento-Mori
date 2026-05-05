@@ -1,0 +1,1 @@
+{"version":3,"file":"plugin-adapters.js","names":[],"sources":["../../../src/fake-entries/plugin-adapters.ts"],"sourcesContent":["import type { AnySerializationAdapter } from '@tanstack/router-core'\n\nexport const pluginSerializationAdapters: Array<AnySerializationAdapter> = []\nexport const hasPluginAdapters = false\n"],"mappings":";AAEA,IAAa,8BAA8D,EAAE;AAC7E,IAAa,oBAAoB"}
