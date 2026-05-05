@@ -20,7 +20,7 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "Memento Mori - Visualize Your Life in Weeks | Mortality Visualizer",
+        title: "Memento Mori - Visualize Your Life in Weeks",
       },
       {
         name: "description",
