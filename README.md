@@ -22,3 +22,14 @@ Notes on interpretation
 
 - The output is illustrative, not predictive. Life-expectancy figures are averages for populations and do not determine any individual’s actual lifespan.
 - The tool’s value is in perspective and motivation, not in forecasting specifics.
+
+
+---
+
+Cooked by aashuu ✦ (Ashutosh Kumar)<br>
+Founder of [2C Labs](https://www.2clabs.tech)
+
+I build tech businesses through SaaS products across every layer of the internet ( Web2 ▪︎ Web3 ▪︎ AI-native ▪︎ Infrastructure )
+
+Connect here:<br>
+Website [www.aashuu.me](https://www.aashuu.me) ✦  𝕏 [@warrioraashuu](https://x.com/warrioraashuu) ✦  LinkedIn [@warrioraashuu](https://www.linkedin.com/in/warrioraashuu/)
